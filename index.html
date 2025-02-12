@@ -4,162 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentoring Insights Report</title>
-    <!-- Link to Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts for a better font style -->
+    <!-- Link to Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts for better styling -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+    
     <style>
         body {
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
-            font-family: 'Poppins', sans-serif; /* Apply a more appealing font */
+            font-family: 'Poppins', sans-serif;
         }
         h1 {
-            font-family: 'Roboto', sans-serif; /* Different font for the title */
+            font-family: 'Roboto', sans-serif;
         }
     </style>
 </head>
 <body>
 
     <!-- Fixed Title -->
-    <h1 class="text-4xl font-extrabold text-black bg-white w-full text-center py-6 z-10 shadow-lg fixed top-0 left-0 right-0 transform transition-all duration-300 ease-in-out hover:scale-105 hover:text-gray-800">
-      MENTORING INSIGHTS
-  </h1>
-  
-  
-  
-
-    <!-- Container for Cards -->
-    <div class="container mx-auto mt-24 p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 ">
-        <!-- JavaScript will insert cards here -->
+    <h1 class="text-center py-4 bg-white shadow-lg fixed-top fw-bold text-black">MENTORING INSIGHTS</h1>
+    
+    <div class="container mt-5 pt-5">
+        <div class="row row-cols-1 row-cols-md-5 g-4" id="students-container">
+            <!-- JavaScript will insert cards here -->
+        </div>
     </div>
 
     <script>
-        const students = 
-  [
-  {"S_NO": 1, "NAME": "AADHITHYA BALU ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 2, "NAME": "AADITYA SIGH RAJPUT", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 3, "NAME": "ABDUL HAKKIM ", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 4, "NAME": "ABHINAV ", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 5, "NAME": "ABHINAV PRAVEEN", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 6, "NAME": "ABI VIGNESH", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 7, "NAME": "ABINASH ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 8, "NAME": "ABINESH ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 9, "NAME": "ABISHEK", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 10, "NAME": "ADHIBAN ", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 11, "NAME": "ADITHYAN", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 12, "NAME": "AHAMED ATHEEP", "SEG": "Foundational", "volunteer_count": 3},
-  {"S_NO": 13, "NAME": "AISHWARIYA ", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 14, "NAME": "AJENDRA ", "SEG": "Advanced", "volunteer_count": 3},
-  {"S_NO": 15, "NAME": "AKSHAY BHARATHY", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 16, "NAME": "AKSHITH ABI ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 17, "NAME": "ALLIMUTHU ", "SEG": "Intermediate", "volunteer_count": 4},
-  {"S_NO": 18, "NAME": "ALMAS ", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 19, "NAME": "AMAN JHA", "SEG": "Advanced", "volunteer_count": 0},
-  {"S_NO": 20, "NAME": "AMIRTHA VARSHINI", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 21, "NAME": "ANISH", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 22, "NAME": "ANJALI KUMARI RAUNIYAR", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 23, "NAME": "ANTONY LUKE ", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 24, "NAME": "ASHWIN S", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 25, "NAME": "ASIM PANDEY", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 26, "NAME": "ASWIN N S", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 27, "NAME": "ASWIN S K", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 28, "NAME": "ASWINI R", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 29, "NAME": "BALA MURALI ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 30, "NAME": "BALA VIGNESH ", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 31, "NAME": "BARATH ROSHAN", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 32, "NAME": "BHARANI DHARAN", "SEG": "Intermediate", "volunteer_count": 3},
-  {"S_NO": 33, "NAME": "BHARATHI CHETHANA", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 34, "NAME": "BHUVANESH ", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 35, "NAME": "BIRUNDA LAKSHMI", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 36, "NAME": "BRINDHA DEVI", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 37, "NAME": "DARSHAN ", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 38, "NAME": "DEEPAN", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 39, "NAME": "DEEPIKA", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 40, "NAME": "DHANISHKA", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 41, "NAME": "DHANU SHREE", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 42, "NAME": "DHARANEESH", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 43, "NAME": "DHARSHANA", "SEG": "Foundational", "volunteer_count": 2},
-  {"S_NO": 44, "NAME": "DHARSHAN PRANESH", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 45, "NAME": "DHARSHINI PRIYA", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 46, "NAME": "DHARSHINI ", "SEG": "Foundational", "volunteer_count": 0},
-  {"S_NO": 47, "NAME": "DHARUN KUMAR", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 48, "NAME": "DHIVYA DHARSHINI", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 49, "NAME": "DINESH KUMAR B", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 50, "NAME": "DINESH KUMAR S", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 51, "NAME": "DIVYA DHARSHINY ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 52, "NAME": "DIVYESH ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 53, "NAME": "DUSHYANTH ", "SEG": "Intermediate", "volunteer_count": 0},
-  {"S_NO": 54, "NAME": "DWARKESH RAJESH MEENA", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 55, "NAME": "ELAKKIYA ", "SEG": "Intermediate", "volunteer_count": 2},
-  {"S_NO": 56, "NAME": "ENIYA ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 57, "NAME": "GIRI DHARAN ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 58, "NAME": "GNANA PRAKASH", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 59, "NAME": "GOKULAN ", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 60, "NAME": "GOKUL ANATHAN", "SEG": "Foundational", "volunteer_count": 1},
-  {"S_NO": 61, "NAME": "GOWSIKA ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 62, "NAME": "GUNA HARSHINI RAM", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 63, "NAME": "GURU ARAVINTHAN ", "SEG": "Intermediate", "volunteer_count": 1},
-  {"S_NO": 64, "NAME": "GURU PRASATH ", "SEG": "Foundational", "volunteer_count": 1}
-];
+        fetch('studentData.json')
+            .then(response => response.json())
+            .then(students => {
+                const container = document.getElementById('students-container');
+                
+                // Find Star Mentor
+                const starMentor = students.reduce((prev, current) => (prev.volunteer_count > current.volunteer_count) ? prev : current);
+                
+                // Display Star Mentor First
+                const starCard = `
+                    <div class="col">
+                        <div class="card border-warning shadow-lg text-center">
+                            <div class="card-body bg-warning">
+                                <h5 class="card-title fw-bold">${starMentor.NAME}</h5>
+                                <div class="badge bg-dark fs-4 p-3">${starMentor.volunteer_count}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += starCard;
+                
+                // Display remaining students
+                students.forEach(student => {
+                    if (student !== starMentor) {
+                        let bgColor = "bg-danger-subtle";
+                        let countColor = "bg-danger";
+                        if (student.volunteer_count >= 2) {
+                            bgColor = "bg-success-subtle";
+                            countColor = "bg-success";
+                        } else if (student.volunteer_count > 0) {
+                            bgColor = "bg-warning-subtle";
+                            countColor = "bg-warning";
+                        }
 
-        // Find Star Mentor (highest volunteer_count)
-        const starMentor = students.reduce((prev, current) => (prev.volunteer_count > current.volunteer_count) ? prev : current);
-
-        // Container to display cards
-        const container = document.querySelector('.container');
-
-        // Display Star Mentor First
-        const starCard = document.createElement('div');
-starCard.className = `w-52 h-24 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 rounded-lg flex items-center justify-between p-4 shadow-lg transition-all duration-300 hover:scale-105 border-4 border-indigo-600`;
-
-const starNameDiv = document.createElement('div');
-starNameDiv.className = "font-semibold text-gray-800 text-lg";
-starNameDiv.textContent = starMentor.NAME;  // Star Mentor's name
-
-const starCountDiv = document.createElement('div');
-starCountDiv.className = `w-14 h-14 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-white rounded-lg flex items-center justify-center font-semibold text-xl`;
-starCountDiv.textContent = starMentor.volunteer_count;
-
-starCard.appendChild(starNameDiv);
-starCard.appendChild(starCountDiv);
-container.appendChild(starCard);
-
-
-        // Display remaining students in S_NO order
-        students.forEach((student) => {
-            if (student !== starMentor) {
-                let bgColor = "bg-red-200";
-                let countColor = "bg-red-700";
-                if (student.volunteer_count >= 2) {
-                    bgColor = "bg-green-200";
-                    countColor = "bg-green-700";
-                } else if (student.volunteer_count > 0) {
-                    bgColor = "bg-yellow-200";
-                    countColor = "bg-yellow-700";
-                }
-
-                const card = document.createElement('div');
-                card.className = `w-52 h-24 ${bgColor} rounded-lg flex items-center justify-between p-4 shadow-lg transition-all duration-300 hover:scale-105 mr-4`;  // Add mb-6 for margin-bottom
-
-
-                const nameDiv = document.createElement('div');
-                nameDiv.className = "font-semibold text-gray-800 text-lg";
-                nameDiv.textContent = student.NAME;
-
-                const countDiv = document.createElement('div');
-                countDiv.className = `w-14 h-14 ${countColor} text-white rounded-lg flex items-center justify-center font-semibold text-xl `;
-                countDiv.textContent = student.volunteer_count;
-
-                card.appendChild(nameDiv);
-                card.appendChild(countDiv);
-                container.appendChild(card);
-            }
-        });
+                        const card = `
+                            <div class="col">
+                                <div class="card shadow-lg text-center ${bgColor}">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold">${student.NAME}</h5>
+                                        <div class="badge ${countColor} fs-4 p-3 text-white">${student.volunteer_count}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.innerHTML += card;
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading student data:', error));
     </script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
