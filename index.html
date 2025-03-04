@@ -3,87 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentoring Insights Report</title>
-    <!-- Link to Bootstrap CSS CDN -->
+    <title>Mentoring Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts for better styling -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f4f4f4;
             font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
-        h1 {
-            font-family: 'Roboto', sans-serif;
+
+        .grid-container {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            gap: 0;
+            overflow-y: auto;
+            grid-template-columns: repeat(8, 1fr);
         }
+
+        .student-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            height: calc(100vh / 8);
+            border: 1px solid white;
+        }
+
+        .star-mentor {
+            background: gold !important;
+            color: black;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-container { grid-template-columns: repeat(6, 1fr); }
+            .student-box { font-size: 16px; }
+        }
+
+        @media (max-width: 900px) {
+            .grid-container { grid-template-columns: repeat(4, 1fr); }
+            .student-box { font-size: 14px; }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+            .student-box { font-size: 12px; }
+        }
+
     </style>
 </head>
 <body>
-
-    <!-- Fixed Title -->
-    <h1 class="text-center py-4 bg-white shadow-lg fixed-top fw-bold text-black">MENTORING INSIGHTS</h1>
-    
-    <div class="container mt-5 pt-5">
-        <div class="row row-cols-1   row-cols-md-5 g-5" id="students-container">
-            <!-- JavaScript will insert cards here -->
-        </div>
-    </div>
+    <div class="grid-container" id="students-container"></div>
 
     <script>
-        fetch('studentData.json')
+        fetch('AIDS-C.json')
             .then(response => response.json())
             .then(students => {
                 const container = document.getElementById('students-container');
-                
-                // Find Star Mentor
-                const starMentor = students.reduce((prev, current) => (prev.volunteer_count > current.volunteer_count) ? prev : current);
-                
-                // Display Star Mentor First
-                const starCard = `
-                    <div class="col">
-                        <div class="card border-warning shadow-lg text-center">
-                            <div class="card-body bg-warning">
-                                <h5 class="card-title fw-bold">${starMentor.NAME}</h5>
-                                <div class="badge bg-dark fs-4 p-3">${starMentor.volunteer_count}</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += starCard;
-                
-                // Display remaining students
-                students.forEach(student => {
-                    if (student !== starMentor) {
-                        let bgColor = "bg-danger-subtle";
-                        let countColor = "bg-danger";
-                        if (student.volunteer_count >= 3) {
-                            bgColor = "bg-success-subtle";
-                            countColor = "bg-success";
-                        } else if (student.volunteer_count > 1) {
-                            bgColor = "bg-warning-subtle";
-                            countColor = "bg-warning";
-                        }
+                const starMentor = students.reduce((prev, current) => 
+                    (prev.volunteer_count > current.volunteer_count) ? prev : current
+                );
 
-                        const card = `
-                            <div class="col">
-                                <div class="card shadow-lg text-center ${bgColor}">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold">${student.NAME}</h5>
-                                        <div class="badge ${countColor} fs-4 p-3 text-white">${student.volunteer_count}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        container.innerHTML += card;
-                    }
+                function getColor(volunteerCount) {
+                    if (volunteerCount >= 2) return "rgba(144, 238, 144, 0.9)"; // Green for 3+
+                    if (volunteerCount >= 1) return "rgba(255, 255, 0, 0.7)";
+                    return "rgba(255, 0, 0, 0.4)";
+                }
+
+                students.forEach(student => {
+                    const color = student === starMentor ? "gold" : getColor(student.volunteer_count);
+                    const box = `
+                        <div class="student-box  ${student === starMentor ? 'star-mentor' : ''}" 
+                             style="background: ${color}; color: black;">
+                            ${student.name}
+                        </div>
+                    `;
+                    container.innerHTML += box;
                 });
             })
             .catch(error => console.error('Error loading student data:', error));
     </script>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
