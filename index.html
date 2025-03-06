@@ -45,14 +45,13 @@
             text-align: center;
             font-size: 18px;
             font-weight: bold;
-            color: black;
             height: calc(100vh / 8);
             border: 1px solid white;
+            color: black; /* Ensures all text is black */
         }
 
         .star-mentor {
-            background: gold !important;
-            color: black;
+            color: black; /* Ensuring star mentor text remains black */
         }
 
         @media (max-width: 1200px) {
@@ -85,21 +84,22 @@
                 );
 
                 function getColor(volunteerCount) {
-                    if (volunteerCount >= 2) return "rgba(144, 238, 144, 0.9)"; // Green for 3+
-                    if (volunteerCount >= 1) return "rgba(255, 255, 0, 0.7)";
-                    return "rgba(255, 0, 0, 0.4)";
+                    if (volunteerCount >= 2) return "rgba(144, 238, 144, 0.9)"; // Light green
+                    if (volunteerCount >= 1) return "rgba(255, 255, 0, 0.7)"; // Yellow
+                    return "rgba(255, 0, 0, 0.4)"; // Light red
                 }
 
                 students.forEach(student => {
-                    const color = student === starMentor ? "gold" : getColor(student.volunteer_count);
+                    const color = student === starMentor ? "radial-gradient(circle, #f1c40f, #d4af37, #b8860b)" : getColor(student.volunteer_count);
                     const box = `
-                        <div class="student-box  ${student === starMentor ? 'star-mentor' : ''}" 
-                             style="background: ${color}; color: black;">
+                        <div class="student-box ${student === starMentor ? 'star-mentor' : ''}" 
+                             style="background: ${color}; color: black; font-family: Bahnschrift; text-align: center; font-size: 20px; padding: 10px;">
                             ${student.name}
                         </div>
                     `;
                     container.innerHTML += box;
                 });
+
             })
             .catch(error => console.error('Error loading student data:', error));
     </script>
