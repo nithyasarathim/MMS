@@ -47,28 +47,59 @@
             font-weight: bold;
             height: calc(100vh / 8);
             border: 1px solid white;
-            color: black; /* Ensures all text is black */
+            color: black;
+            transition: background 3s ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 75%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 25%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes starGlow {
+            0% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(241, 196, 15, 1); }
+            100% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); }
         }
 
         .star-mentor {
-            color: black; /* Ensuring star mentor text remains black */
+            background: radial-gradient(circle, #f1c40f, #d4af37, #b8860b) !important;
+            color: black;
+            animation: starGlow 1.5s infinite ease-in-out;
         }
 
-        @media (max-width: 1200px) {
-            .grid-container { grid-template-columns: repeat(6, 1fr); }
-            .student-box { font-size: 16px; }
+        .animated-gradient-green {
+            background: linear-gradient(270deg, rgba(0, 128, 0, 0.9), rgba(0, 255, 0, 0.8));
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease-in-out infinite;
         }
 
-        @media (max-width: 900px) {
-            .grid-container { grid-template-columns: repeat(4, 1fr); }
-            .student-box { font-size: 14px; }
+        .animated-gradient-lightgreen {
+            background: linear-gradient(270deg, rgba(144, 238, 144, 0.9), rgba(34, 139, 34, 0.8));
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease-in-out infinite;
         }
 
-        @media (max-width: 600px) {
-            .grid-container { grid-template-columns: repeat(2, 1fr); }
-            .student-box { font-size: 12px; }
+        .animated-gradient-yellow {
+            background: linear-gradient(270deg, rgba(255, 255, 0, 0.8), rgba(255, 215, 0, 0.6), rgba(255, 255, 0, 0.5));
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease-in-out infinite;
         }
 
+        .animated-gradient-red {
+            background: linear-gradient(270deg, rgba(129, 0, 0, 0.8), rgba(255, 0, 0, 0.7));
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease-in-out infinite;
+        }
+
+        .animated-gradient-lightred {
+            background: linear-gradient(270deg, rgba(255, 0, 0, 0.4), rgba(255, 69, 0, 0.6), rgba(255, 0, 0, 0.5));
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
@@ -84,24 +115,26 @@
                 );
 
                 function getColor(volunteerCount) {
-                    if (volunteerCount > 2) return "rgba(0, 100, 0, 0.8)"; // Dark green
-                    if (volunteerCount >= 2) return "rgba(144, 238, 144, 0.9)"; // Light green
-                    if (volunteerCount >= 1) return "rgba(255, 255, 0, 0.7)"; // Yellow
-                    if (volunteerCount < 0) return "rgba(139, 0, 0, 0.8)";
-                    return "rgba(255, 0, 0, 0.4)"; // Light red
+                    if (volunteerCount > 2) return "animated-gradient-green";
+                    if (volunteerCount === 2) return "animated-gradient-lightgreen";
+                    if (volunteerCount === 1) return "animated-gradient-yellow";
+                    if (volunteerCount < 0) return "animated-gradient-red";
+                    return "animated-gradient-lightred";
                 }
 
                 students.forEach(student => {
-                    const color = student === starMentor ? "radial-gradient(circle, #f1c40f, #d4af37, #b8860b)" : getColor(student.volunteer_count);
-                    const box = `
-                        <div class="student-box ${student === starMentor ? 'star-mentor' : ''}" 
-                             style="background: ${color}; color: black; font-family: Bahnschrift; text-align: center; font-size: 20px; padding: 10px;">
-                            ${student.name}
-                        </div>
-                    `;
-                    container.innerHTML += box;
-                });
+                    const box = document.createElement("div");
+                    box.classList.add("student-box");
 
+                    if (student === starMentor) {
+                        box.classList.add("star-mentor");
+                    } else {
+                        box.classList.add(getColor(student.volunteer_count));
+                    }
+
+                    box.textContent = student.name;
+                    container.appendChild(box);
+                });
             })
             .catch(error => console.error('Error loading student data:', error));
     </script>
