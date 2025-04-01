@@ -1,57 +1,53 @@
 [
     {
-        "name":"STAR MENTEE",
-        "volunteer_count":1
+        "s.no": 1,
+        "name": "MOHIT KUMAR",
+        "volunteer_count":1 
     },
     {
         "s.no": 1,
-        "name": "MOHIT KUMAR",
-        "volunteer_count":0 
-    },
-    {
-        "s.no": 2,
         "name": "MONIKHA ",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
-        "s.no": 3,
+        "s.no": 1,
         "name": "MUBAARAK",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 4,
         "name": "MUGESH",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 5,
         "name": "MUGUNTHAN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 6,
         "name": "MURARI DAHAL",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 7,
         "name": "NAGUL",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 8,
         "name": "NAKULAN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 9,
         "name": "NANDITAA",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 10,
         "name": "NAVEEN KARTHIK",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 11,
@@ -66,12 +62,12 @@
     {
         "s.no": 13,
         "name": "NAVIN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 14,
         "name": "NAWAS SHERIF",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 15,
@@ -81,12 +77,12 @@
     {
         "s.no": 16,
         "name": "NETHRA S",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 17,
         "name": "NETHRA S",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 18,
@@ -101,7 +97,7 @@
     {
         "s.no": 20,
         "name": "NIRANJOAN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 21,
@@ -116,12 +112,12 @@
     {
         "s.no": 23,
         "name": "NITHYAPRAKASH",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 24,
         "name": "NITHYASRI",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 25,
@@ -131,7 +127,7 @@
     {
         "s.no": 26,
         "name": "PARAMESHWARAN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 27,
@@ -141,17 +137,17 @@
     {
         "s.no": 28,
         "name": "PAVITHRA B",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 29,
         "name": "PAVITHRA M",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 30,
         "name": "PAVITHRA M",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 31,
@@ -161,7 +157,7 @@
     {
         "s.no": 32,
         "name": "POOJA ",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 33,
@@ -171,17 +167,17 @@
     {
         "s.no": 34,
         "name": "POOVENDRAKUMAR",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 35,
         "name": "PRABHU",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 36,
         "name": "PRADEEP",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 37,
@@ -191,22 +187,22 @@
     {
         "s.no": 38,
         "name": "PRINCE BENJAMIN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 39,
         "name": "PRITHIVI",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 40,
         "name": "PRIYA",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 41,
         "name": "PRIYADARSHINI A S",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 42,
@@ -226,12 +222,12 @@
     {
         "s.no": 45,
         "name": "PUVIARASU",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 46,
         "name": "RAGHURAM",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 47,
@@ -241,27 +237,27 @@
     {
         "s.no": 48,
         "name": "RAMYA M",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 49,
         "name": "RAMYA S",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 50,
         "name": "RANJIT SHAH KANU",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 51,
         "name": "RAVI KUSHWAHA",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 52,
         "name": "RAVISHANKAR",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 53,
@@ -271,17 +267,17 @@
     {
         "s.no": 54,
         "name": "RETHANYA",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 55,
         "name": "RETHINAVEL",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 56,
         "name": "RIDHANYAA DEVIE",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 57,
@@ -301,22 +297,22 @@
     {
         "s.no": 61,
         "name": "RUKSHANA",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 62,
-        "name": "RUPESH KUMAR SAH",
-        "volunteer_count": 0
+        "name": "RUPESH KUMAR SHAH",
+        "volunteer_count": 1
     },
     {
         "s.no": 63,
         "name": "SABITHRA ",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 64,
         "name": "SACHIT ",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 65,
@@ -331,11 +327,11 @@
     {
         "s.no": 67,
         "name": "SAI KRISHNAN",
-        "volunteer_count": 0
+        "volunteer_count": 1
     },
     {
         "s.no": 68,
         "name": "SAIRAM ",
-        "volunteer_count": 0
+        "volunteer_count": 1
     }
 ] 

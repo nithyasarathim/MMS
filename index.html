@@ -40,6 +40,7 @@
 
         .student-box {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -49,6 +50,36 @@
             border: 1px solid white;
             color: black;
             transition: background 3s ease-in-out;
+        }
+
+        .volunteer-count {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white; /* Default text color */
+        }
+
+        /* Circle color styles based on volunteer count */
+        .count-dark-red {
+            background-color: black; /* Circle color for dark red */
+        }
+
+        .count-light-red {
+            background-color: darkred; /* Circle color for light red */
+        }
+
+        .count-yellow {
+            background-color: darkgoldenrod; /* Circle color for yellow */
+        }
+
+        .count-green {
+            background-color: darkgreen; /* Circle color for green */
         }
 
         @keyframes gradientShift {
@@ -115,11 +146,19 @@
                 );
 
                 function getColor(volunteerCount) {
-                    if (volunteerCount > 2) return "animated-gradient-green";
-                    if (volunteerCount === 2) return "animated-gradient-lightgreen";
-                    if (volunteerCount === 1) return "animated-gradient-yellow";
-                    if (volunteerCount < 0) return "animated-gradient-red";
+                    if (volunteerCount > 3) return "animated-gradient-green";
+                    if (volunteerCount === 3) return "animated-gradient-lightgreen";
+                    if (volunteerCount === 2) return "animated-gradient-yellow";
+                    if (volunteerCount === 0) return "animated-gradient-red";
                     return "animated-gradient-lightred";
+                }
+
+                function getCountClass(volunteerCount) {
+                    if (volunteerCount === 0) return "count-dark-red"; // Dark Red Circle
+                    if (volunteerCount === 1) return "count-light-red"; // Light Red Circle
+                    if (volunteerCount === 2) return "count-yellow"; // Yellow Circle
+                    if (volunteerCount > 2) return "count-green"; // Green Circle
+                    return ""; // Default
                 }
 
                 students.forEach(student => {
@@ -133,6 +172,12 @@
                     }
 
                     box.textContent = student.name;
+
+                    const count = document.createElement("div");
+                    count.classList.add("volunteer-count", getCountClass(student.volunteer_count));
+                    count.textContent = student.volunteer_count;
+
+                    box.appendChild(count);
                     container.appendChild(box);
                 });
             })
