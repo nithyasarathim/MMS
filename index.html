@@ -146,18 +146,17 @@
                 );
 
                 function getColor(volunteerCount) {
-                    if (volunteerCount > 3) return "animated-gradient-green";
-                    if (volunteerCount === 3) return "animated-gradient-lightgreen";
-                    if (volunteerCount === 2) return "animated-gradient-yellow";
-                    if (volunteerCount === 0) return "animated-gradient-red";
+                    if (volunteerCount > 4) return "animated-gradient-green";
+                    if (volunteerCount === 4) return "animated-gradient-lightgreen";
+                    if (volunteerCount >=2) return "animated-gradient-yellow";
                     return "animated-gradient-lightred";
                 }
 
                 function getCountClass(volunteerCount) {
-                    if (volunteerCount === 0) return "count-dark-red"; // Dark Red Circle
-                    if (volunteerCount === 1) return "count-light-red"; // Light Red Circle
-                    if (volunteerCount === 2) return "count-yellow"; // Yellow Circle
-                    if (volunteerCount > 2) return "count-green"; // Green Circle
+                    if (volunteerCount === 0) return "count-dark-red"; 
+                    if (volunteerCount === 1) return "count-light-red";
+                    if (volunteerCount <= 3) return "count-yellow"; 
+                    if (volunteerCount >= 4) return "count-green"; 
                     return ""; // Default
                 }
 
